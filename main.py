@@ -2,6 +2,7 @@
 # the open-source pygame library
 # throughout this file
 import sys
+import random
 import pygame
 from constants import*
 from player import Player
@@ -48,11 +49,11 @@ def main():
                 sys.exit()
             
             for shot in shots:
-                print("inside shoot")
                 if asteroid.collides_with(shot):
                     shot.kill()
-                    asteroid.kill()
+                    asteroid.split()
                     
+
         screen.fill("black")
         
         for draw in drawable:
